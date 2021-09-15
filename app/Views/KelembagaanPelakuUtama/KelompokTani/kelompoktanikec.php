@@ -19,19 +19,19 @@
             </thead>
             <tbody>
             <?php
-           // $i = 1;
-           // foreach ($tabel_data as $row) {
-           // ?>
+            $i = 1;
+            foreach ($tabel_data as $row) {
+            ?>
             
                 <tr>
                     <td class="align-middle text-center text-sm">
-                        <p class="text-xs font-weight-bold mb-0"></p>
+                        <p class="text-xs font-weight-bold mb-0"><?= $i++ ?></p>
                     </td>
                     <td class="align-middle text-center text-sm">
-                        <p class="text-xs font-weight-bold mb-0"></p>
+                        <p class="text-xs font-weight-bold mb-0"><?= $row['deskripsi'] ?></p>
                     </td>
                     <td class="align-middle text-center text-sm">
-                        <p class="text-xs font-weight-bold mb-0"></p>
+                        <p class="text-xs font-weight-bold mb-0"><?= $row['jum'] ?></p>
                   
                         <td class="align-middle text-center text-sm">
                         <a href="/gapoktan/list"></a><button type="button" class="btn btn-info btn-sm">
@@ -40,9 +40,9 @@
                         </a>
                     </td>
                 </tr>
-         //   <?php
-         //   }
-            //?>
+           <?php
+            }
+            ?>
 
             </tbody>
            

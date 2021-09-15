@@ -1,6 +1,7 @@
 <?= $this->extend('layout/main_template') ?>
 
 <?= $this->section('content') ?>
+<?php $sessnama = session()->get('kodebapel'); ?>
 
 
 <center><h2> Daftar Gapoktan di Kab <?= ucwords(strtolower($nama_kabupaten)) ?> </h2></center>
@@ -34,9 +35,9 @@
                         <p class="text-xs font-weight-bold mb-0"><?= $row['jum'] ?></p>
                   
                         <td class="align-middle text-center text-sm">
-                        <a href="/gapoktan/list"></a><button type="button" class="btn btn-info btn-sm">
+                        <a href="/listgapoktan"><button type="button" class="btn btn-info btn-sm">
                              Detail
-                        </button>
+                        </button></a>
                         </a>
                     </td>
                 </tr>
@@ -59,9 +60,9 @@
                 
 
                     <th class="align-middle text-center text-sm">
-                        <button type="button" class="btn btn-info btn-sm">
+                        <a href=""> <button type="button" class="btn btn-info btn-sm">
                              Detail
-                        </button>
+                        </button></a>
                         </a>
                     </th>
                 </tr>

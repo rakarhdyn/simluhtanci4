@@ -96,6 +96,8 @@ $routes->get('/listkep2l', 'KelembagaanPelakuUtama/KelembagaanPetaniLainnya/List
 //
 $routes->get('/desa', 'KelembagaanPenyuluhan/Desa/Desa::desa');
 $routes->get('/kecamatan', 'KelembagaanPenyuluhan/Kecamatan/Kecamatan::kecamatan');
+$routes->get('/kecamatankec', 'KelembagaanPenyuluhan/Kecamatan/KecamatanKec::kecamatankec');
+/*
 /*
  * --------------------------------------------------------------------
  * Additional Routing

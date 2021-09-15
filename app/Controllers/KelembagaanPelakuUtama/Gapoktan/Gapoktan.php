@@ -6,13 +6,19 @@ use App\Models\KelembagaanPelakuUtama\Gapoktan\GapoktanModel;
 
 class Gapoktan extends BaseController
 {
+    protected $session;
+
+    function __construct()
+    {
+        $this->session = \Config\Services::session();
+        $this->session->start();
+    }
     public function gapoktan()
     {
-        $get_param = $this->request->getGet();
-
-        $kode_kab = $get_param['kode_kab'];
+    
         $gapoktan_model = new GapoktanModel;
-        $gapoktan_data = $gapoktan_model->getGapoktanTotal($kode_kab);
+        $gapoktan_data = $gapoktan_model->getGapoktanTotal($this->session->get('kodebapel'));
+        
 
         $data = [
             

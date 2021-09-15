@@ -1,8 +1,7 @@
 <?= $this->extend('layout/main_template') ?>
 
 <?= $this->section('content') ?>
-
-
+<?php $sessnama = session()->get('kodebpp'); ?>
 <center><h2> Daftar Gapoktan di Kecamatan <?= ucwords(strtolower($nama_kecamatan)) ?> </h2></center>
 <center><h2>Data ditemukan <?= ucwords(strtolower($jum)) ?> </h2></center>
 <button type="button" class="btn bg-gradient-primary btn-sm">+ Tambah Data</button>

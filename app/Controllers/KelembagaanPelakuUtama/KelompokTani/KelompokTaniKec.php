@@ -17,7 +17,7 @@ class KelompokTaniKec extends BaseController
         $data = [
             
             'nama_kec' => $kelompoktanikec_data['nama_kec'],
-           // 'tabel_data' => $kelompoktanikec_data['table_data'],
+            'tabel_data' => $kelompoktanikec_data['table_data'],
             'title' => 'Kelompok Tani',
             'name' => 'Kelompok Tani'
         ];

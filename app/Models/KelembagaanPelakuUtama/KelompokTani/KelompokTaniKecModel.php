@@ -35,17 +35,17 @@ class KelompokTaniKecModel extends Model
         
        
         
-    //   $query3   = $db->query("select a.kode_bp3k ,b.kecamatan,c.deskripsi,d.jum
-                     //          from tblbpp a
-                     //          left join from tblbpp_wil_kec b on a.kode_bp3k=b.kode_bp3k
-                     //          left join from tbldaerah c on a.kecamatan=c.id_daerah
-                     //          left join (select count(id_poktan) as jum from tb_poktan) d on a.kecamatan=d.kode_kec
-                     //          where kecamatan='$kode_kec'");
-     //   $results = $query3->getResultArray();
+      $query3   = $db->query("select a.kode_bp3k, b.kecamatan,c.deskripsi,d.jum
+                              from tblbpp a
+                              left join from tblbpp_wil_kec b on a.kode_bp3k=b.kode_bp3k
+                              left join from tbldaerah c on a.kecamatan=c.id_daerah
+                              left join (select count(id_poktan) as jum from tb_poktan) d on a.kecamatan=d.kode_kec
+                              where kecamatan='$kode_kec'");
+       $results = $query3->getResultArray();
 
         $data =  [
             'nama_kec' => $row->nama_kec,
-          //  'table_data' => $results,
+            'table_data' => $results,
         ];
 
         return $data;

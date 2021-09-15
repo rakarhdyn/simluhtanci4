@@ -6,13 +6,17 @@ use App\Models\KelembagaanPelakuUtama\Gapoktan\ListGapoktanModel;
 
 class ListGapoktan extends BaseController
 {
+    function __construct()
+    {
+        $this->session = \Config\Services::session();
+        $this->session->start();
+    }
     public function listgapoktan()
     {
-        $get_param = $this->request->getGet();
 
-        $kode_kec = $get_param['kode_kec'];
+        
         $listgapoktan_model = new ListGapoktanModel();
-        $listgapoktan_data = $listgapoktan_model->getListGapoktanTotal($kode_kec);
+        $listgapoktan_data = $listgapoktan_model->getListGapoktanTotal($this->session->get('kodebpp'));
 
         $data = [
             
