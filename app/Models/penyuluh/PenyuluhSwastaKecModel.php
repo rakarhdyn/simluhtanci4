@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\penyuluh;
 
 use CodeIgniter\Model;
 use \Config\Database;
 
-class PenyuluhSwastaModel extends Model
+class PenyuluhSwastaKecModel extends Model
 {
     protected $table      = 'simluhtan';
     //protected $primaryKey = 'id';
@@ -27,20 +27,25 @@ class PenyuluhSwastaModel extends Model
     // protected $skipValidation     = false;
 
 
-    public function getPenyuluhSwadayaTotal($kode_kab)
+    public function getPenyuluhSwastaKecTotal($kode_kec)
     {
         $db = Database::connect();
-        $query = $db->query("select count(a.id_swa) as jum, nama_dati2 as nama_kab from tbldasar_swasta a left join tbldati2 b on b.id_dati2=a.satminkal where satminkal='$kode_kab'");
+        $query = $db->query("select count(a.id_swa) as jum, nama_dati2 as nama_kab, deskripsi as nama_kec from tbldasar_swasta a 
+        left join tbldati2 b on b.id_dati2=a.satminkal
+        left join tbldaerah c on c.id_daerah=a.tempat_tugas
+        where a.tempat_tugas='$kode_kec'");
         $row   = $query->getRow();
 
-        $query   = $db->query("select a.noktp, a.nama, a.tgl_update, a.tempat_lahir, a.tgl_lahir, a.bln_lahir, a.thn_lahir from tbldasar_swasta a
+        $query   = $db->query("select a.noktp, a.nama, a.tgl_update, a.tempat_lahir, a.tgl_lahir, a.bln_lahir, a.thn_lahir, a.nama_perusahaan 
+                                from tbldasar_swasta a
                                 left join tblsatminkal b on a.satminkal=b.kode
-                                where a.satminkal='$kode_kab' order by nama");
+                                where a.tempat_tugas='$kode_kec' order by nama");
         $results = $query->getResultArray();
 
         $data =  [
             'jum' => $row->jum,
             'nama_kab' => $row->nama_kab,
+            'nama_kec' => $row->nama_kec,
             'table_data' => $results,
         ];
 

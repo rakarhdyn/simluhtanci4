@@ -5,13 +5,9 @@ namespace App\Models\penyuluh;
 use CodeIgniter\Model;
 use \Config\Database;
 
-class PenyuluhModel extends Model
+class PenyuluhSwadayaModel extends Model
 {
-
-    // protected $table      = 'simluhtan';
-    // protected $table      = 'penyuluh';
-    // protected $table      = 'tbljabatan';
-
+    protected $table      = 'simluhtan';
     //protected $primaryKey = 'id';
 
 
@@ -37,7 +33,9 @@ class PenyuluhModel extends Model
         $query = $db->query("select count(a.id) as jum, nama_dati2 as nama_kab from tbldasar_swa a left join tbldati2 b on b.id_dati2=a.satminkal where satminkal='$kode_kab'");
         $row   = $query->getRow();
 
-        $query   = $db->query("select a.noktp, a.nama, a.tgl_update, d.nm_desa, i.nama_bpp, j.deskripsi from tbldasar_swa a
+        $query   = $db->query("select a.noktp, a.nama, a.tgl_update, d.nm_desa as wil_ker, e.nm_desa as wil_ker2, 
+                                f.nm_desa as wil_ker3, g.nm_desa as wil_ker4, h.nm_desa as wil_ker5, i.nama_bpp, 
+                                j.deskripsi from tbldasar_swa a
                                 left join tblsatminkal b on a.satminkal=b.kode
                                 left join tblstatus_penyuluh c on a.status_kel=c.kode
                                 left join tbldesa d on a.wil_kerja=d.id_desa

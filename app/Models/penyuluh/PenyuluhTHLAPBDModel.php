@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\penyuluh;
 
 use CodeIgniter\Model;
 use \Config\Database;
@@ -27,7 +27,7 @@ class PenyuluhTHLAPBDModel extends Model
     // protected $skipValidation     = false;
 
 
-    public function getPenyuluhSwadayaTotal($kode_kab)
+    public function getPenyuluhTHLAPBDTotal($kode_kab)
     {
         $db = Database::connect();
         $query = $db->query("select count(a.id) as jum, nama_dati2 as nama_kab from tbldasar_thl a left join tbldati2 b on b.id_dati2=a.satminkal where satminkal='$kode_kab' and sumber_dana='apbd'");
