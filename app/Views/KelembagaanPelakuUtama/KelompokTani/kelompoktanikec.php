@@ -3,7 +3,9 @@
 <?= $this->section('content') ?>
 
 
-<center><h2> Daftar Kelompok Binaan BP3K (<?= ucwords(strtolower($nama_kec)) ?>) </h2></center>
+<?php $sessnama = session()->get('kodebpp'); ?>
+
+<center><h2> Daftar Kelompok Binaan BP3K (<?= ucwords(strtolower($nama_bpp)) ?>) </h2></center>
 <div class="card">
     <div class="table-responsive">
         <table class="table align-items-center mb-0">
@@ -45,7 +47,27 @@
             ?>
 
             </tbody>
-           
+            <tfoot>
+                <tr>
+                    <th class="align-middle text-center text-sm">
+                        <p class="text-xs font-weight-bold mb-0"></p>
+                    </th>
+                    <th class="align-middle text-center text-sm">
+                        <p class="text-xs font-weight-bold mb-0">JUMLAH</p>
+                    </th>
+                    <th class="align-middle text-center text-sm">
+                        <p class="text-xs font-weight-bold mb-0"><?= $jumpok ?></p>
+                    </th>
+                
+
+                    <th class="align-middle text-center text-sm">
+                        <a href=""> <button type="button" class="btn btn-info btn-sm">
+                             Detail
+                        </button></a>
+                        </a>
+                    </th>
+                </tr>
+            </tfoot>
         </table>
                
     </div>

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models\KelembagaanPelakuUtama\KelompokTani;
+namespace App\Models\KelembagaanPelakuUtama\Gapoktan;
 
 use CodeIgniter\Model;
 use \Config\Database;
 
-class KelompokTaniKecModel extends Model
+class GapoktanKecModel extends Model
 {
     //protected $table      = 'penyuluh';
     //protected $primaryKey = 'id';
@@ -27,7 +27,7 @@ class KelompokTaniKecModel extends Model
     // protected $skipValidation     = false;
 
 
-    public function getKelompokTaniKecTotal($kode_bpp)
+    public function getGapoktanKecTotal($kode_bpp)
     {
         $db = Database::connect();
         $query = $db->query("select nama_bpp as nama_bpp from tblbpp where kecamatan='$kode_bpp'");
@@ -38,20 +38,20 @@ class KelompokTaniKecModel extends Model
         
       $query3   = $db->query("select id_daerah,deskripsi, count(id_gap) as jum 
                                 from tbldaerah a
-                                left join tb_poktan b on a.id_daerah=b.kode_kec
+                                left join tb_gapoktan b on a.id_daerah=b.kode_kec
                                 where id_daerah='$kode_bpp'
-                                order by deskripsi");
-       $results = $query3->getResultArray();
-       $query4 = $db->query("SELECT count(id_poktan) as jumpok FROM tb_poktan where kode_kec ='$kode_bpp'");
-       $row3   = $query4->getRow();
-
+                                order by deskripsi ");
+        $results = $query3->getResultArray();
+        $query4 = $db->query("SELECT count(id_gap) as jumgap FROM tb_gapoktan where kode_kec ='$kode_bpp'");
+        $row3   = $query4->getRow();
         $data =  [
+            'jum' => $row2->jum,
             'nama_bpp' => $row->nama_bpp,
             'table_data' => $results,
-            'jum' => $row2->jum,
-            'jumpok' => $row3->jumpok
+            'jumgap' => $row3->jumgap,
         ];
 
         return $data;
     }
+    
 }

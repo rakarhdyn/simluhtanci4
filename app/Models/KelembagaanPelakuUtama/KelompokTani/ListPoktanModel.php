@@ -7,7 +7,7 @@ use \Config\Database;
 
 class ListPoktanModel extends Model
 {
-    protected $table      = 'penyuluh';
+    //protected $table      = 'penyuluh';
     //protected $primaryKey = 'id';
 
 
@@ -27,7 +27,7 @@ class ListPoktanModel extends Model
     // protected $skipValidation     = false;
 
 
-    public function getKelompokTaniTotal($kode_kec)
+    public function getListKelompokTaniTotal($kode_kec)
     {
         $db = Database::connect();
         $query = $db->query("select deskripsi as nama_kec from tbldaerah where id_daerah='$kode_kec'");

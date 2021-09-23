@@ -2,6 +2,7 @@
 
 <?= $this->section('content') ?>
 
+<?php $sessnama = session()->get('kodebpp'); ?>
 
 <center><h2> Daftar Kelompok di Tani Kecamatan <?= ucwords(strtolower($nama_kecamatan)) ?> </h2></center>
 <button type="button" class="btn bg-gradient-primary btn-sm">+ Tambah Kelompok</button>

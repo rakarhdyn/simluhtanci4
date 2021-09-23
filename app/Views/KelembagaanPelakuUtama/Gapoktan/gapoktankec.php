@@ -1,11 +1,9 @@
 <?= $this->extend('layout/main_template') ?>
 
 <?= $this->section('content') ?>
-<?php $sessnama = session()->get('kodebapel'); ?>
+<?php $sessnama = session()->get('kodebpp'); ?>
 
-
-
-<center><h2> Daftar Gapoktan di Kab <?= ucwords(strtolower($nama_kabupaten)) ?> </h2></center>
+<center><h2> Daftar Gabungan Kelompok Tani Binaan BP3K <?= ucwords(strtolower($nama_bpp)) ?> </h2></center>
 <div class="card">
     <div class="table-responsive">
         <table class="table align-items-center mb-0">
@@ -45,7 +43,6 @@
             <?php
             }
             ?>
-
             </tbody>
             <tfoot>
                 <tr>
@@ -56,7 +53,7 @@
                         <p class="text-xs font-weight-bold mb-0">JUMLAH</p>
                     </th>
                     <th class="align-middle text-center text-sm">
-                        <p class="text-xs font-weight-bold mb-0"><?= $jum_gapoktan ?></p>
+                        <p class="text-xs font-weight-bold mb-0"><?= $jumgap ?></p>
                     </th>
                 
 

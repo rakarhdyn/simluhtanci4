@@ -6,13 +6,16 @@ use App\Models\KelembagaanPelakuUtama\KelompokTani\ListPoktanModel;
 
 class ListPoktan extends BaseController
 {
+    function __construct()
+    {
+        $this->session = \Config\Services::session();
+        $this->session->start();
+    }
     public function listpoktan()
     {
-        $get_param = $this->request->getGet();
-
-        $kode_kec = $get_param['kode_kec'];
+       
         $listpoktan_model = new ListPoktanModel();
-        $listpoktan_data = $listpoktan_model->getKelompokTaniTotal($kode_kec);
+        $listpoktan_data = $listpoktan_model->getListKelompokTaniTotal($this->session->get('kodebpp'));
 
         $data = [
             

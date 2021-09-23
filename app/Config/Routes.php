@@ -88,6 +88,7 @@ $routes->group('', ['namespace' => 'Myth\Auth\Controllers'], function ($routes) 
 //KelembagaanPelakuUtamaRoutes
 
 $routes->get('/gapoktan', 'KelembagaanPelakuUtama/Gapoktan/Gapoktan::gapoktan');
+$routes->get('/gapoktankec', 'KelembagaanPelakuUtama/Gapoktan/GapoktanKec::gapoktankec');
 $routes->get('/listgapoktan', 'KelembagaanPelakuUtama/Gapoktan/ListGapoktan::listgapoktan');
 $routes->get('/listgapoktandesa', 'KelembagaanPelakuUtama/Gapoktan/ListGapoktanDesa::listgapoktandesa');
 
@@ -95,6 +96,7 @@ $routes->get('/gapoktanbersama', 'KelembagaanPelakuUtama/GapoktanBersama/Gapokta
 
 $routes->get('/kelembagaanekonomipetani', 'KelembagaanPelakuUtama/KelembagaanEkonomiPetani::kelembagaanekonomipetani');
 $routes->get('/listkep', 'KelembagaanPelakuUtama/KelembagaanEkonomiPetani/ListKEP::listkep');
+$routes->get('/kelembagaanekonomipetanikec', 'KelembagaanPelakuUtama/KelembagaanEkonomiPetani/KelembagaanEkonomiPetaniKec::kelembagaanekonomipetanikec');
 
 $routes->get('/kelompoktani', 'KelembagaanPelakuUtama/KelompokTani/KelompokTani::kelompoktani');
 $routes->get('/kelompoktanikec', 'KelembagaanPelakuUtama/KelompokTani/KelompokTaniKec::kelompoktanikec');
@@ -103,7 +105,9 @@ $routes->get('/listpoktananggota', 'KelembagaanPelakuUtama/KelompokTani/ListPokt
 
 $routes->get('/kelembagaanpetanilainnya', 'KelembagaanPelakuUtama/KelembagaanPetaniLainnya/KelembagaanPetaniLainnya::kelembagaanpetanilainnya');
 $routes->get('/listkep2l', 'KelembagaanPelakuUtama/KelembagaanPetaniLainnya/ListKEP2L::listkep2l');
+$routes->get('/kelembagaanpetanilainnyakec', 'KelembagaanPelakuUtama/KelembagaanPetaniLainnya/KelembagaanPetaniLainnyaKec::kelembagaanpetanilainnyakec');
 
+//
 $routes->get('/desa', 'KelembagaanPenyuluhan/Desa/Desa::desa');
 $routes->get('/kabupaten_kota', 'KelembagaanPenyuluhan/Kabupaten/Kabupaten::kab');
 $routes->get('/kecamatan', 'KelembagaanPenyuluhan/Kecamatan/Kecamatan::kecamatan');

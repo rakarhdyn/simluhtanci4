@@ -6,17 +6,24 @@ use App\Models\KelembagaanPelakuUtama\KelompokTani\KelompokTaniKecModel;
 
 class KelompokTaniKec extends BaseController
 {
+    protected $session;
+
+    function __construct()
+    {
+        $this->session = \Config\Services::session();
+        $this->session->start();
+    }
     public function kelompoktanikec()
     {
-        $get_param = $this->request->getGet();
-
-        $nama_kec = $get_param['nama_kec'];
+       
         $kelompoktanikec_model = new KelompokTaniKecModel();
-        $kelompoktanikec_data = $kelompoktanikec_model->getKelompokTaniKecTotal($nama_kec);
+        $kelompoktanikec_data = $kelompoktanikec_model->getKelompokTaniKecTotal($this->session->get('kodebpp'));
 
         $data = [
             
-            'nama_kec' => $kelompoktanikec_data['nama_kec'],
+            'jum' => $kelompoktanikec_data['jum'],
+            'jumpok' => $kelompoktanikec_data['jumpok'],
+            'nama_bpp' => $kelompoktanikec_data['nama_bpp'],
             'tabel_data' => $kelompoktanikec_data['table_data'],
             'title' => 'Kelompok Tani',
             'name' => 'Kelompok Tani'

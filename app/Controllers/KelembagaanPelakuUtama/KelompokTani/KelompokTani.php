@@ -6,13 +6,18 @@ use App\Models\KelembagaanPelakuUtama\KelompokTani\KelompokTaniModel;
 
 class KelompokTani extends BaseController
 {
+    protected $session;
+
+    function __construct()
+    {
+        $this->session = \Config\Services::session();
+        $this->session->start();
+    }
     public function kelompoktani()
     {
-        $get_param = $this->request->getGet();
-
-        $kode_kab = $get_param['kode_kab'];
+        
         $kelompoktani_model = new KelompokTaniModel();
-        $kelompoktani_data = $kelompoktani_model->getKelompokTaniTotal($kode_kab);
+        $kelompoktani_data = $kelompoktani_model->getKelompokTaniTotal($this->session->get('kodebapel'));
 
         $data = [
             

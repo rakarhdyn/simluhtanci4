@@ -4,6 +4,8 @@ namespace App\Controllers\KelembagaanPelakuUtama\Gapoktan;
 use App\Controllers\BaseController;
 use App\Models\KelembagaanPelakuUtama\Gapoktan\GapoktanModel;
 
+use App\Models\KelembagaanPelakuUtama\Gapoktan\ListGapoktanModel;
+
 class Gapoktan extends BaseController
 {
     protected $session;
@@ -18,7 +20,6 @@ class Gapoktan extends BaseController
     
         $gapoktan_model = new GapoktanModel;
         $gapoktan_data = $gapoktan_model->getGapoktanTotal($this->session->get('kodebapel'));
-        
 
         $data = [
             
@@ -31,6 +32,7 @@ class Gapoktan extends BaseController
 
         return view('KelembagaanPelakuUtama/Gapoktan/gapoktan', $data);
     }
-  
+ 
+
  
 }

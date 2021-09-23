@@ -291,27 +291,9 @@
                             </g>
                         </svg>
                     </div>
-
-
                     <span class="nav-link-text ms-1">Kelompok Tani</span>
                 </a>
             </li>
-
-
-                    <span class="nav-link-text ms-1">Kelompok Tani</span>
-
-                    <span class="nav-link-text ms-1">CPNS</span>
-
-                </a>
-            </li>
-
-
-            <li class="nav-item">
-
-                <a class="nav-link" href="/gapoktan">
-
-                <a class="nav-link  " href="<?= base_url(); ?>">
-
            
             <li class="nav-item">
                 <a class="nav-link" href="/gapoktan">
@@ -334,25 +316,7 @@
                     <span class="nav-link-text ms-1" >Gapoktan </span>
                 </a>
             </li>
-          
-
-
-                    <span class="nav-link-text ms-1">Gapoktan </span>
-
-                    <span class="nav-link-text ms-1">Kelompok Tani</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="/gapoktan">
-
-                    <span class="nav-link-text ms-1">PNS</span>
-
-                </a>
-            </li>
-
-
-
+        
             <li class="nav-item">
                 <a class="nav-link" href="/gapoktanbersama">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -375,7 +339,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/kelembagaanpetanilainnya">
+                <a class="nav-link" href="/kelembagaanekonomipetanikec">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>office</title>
